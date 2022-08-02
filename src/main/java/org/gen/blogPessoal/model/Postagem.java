@@ -18,13 +18,13 @@ import javax.validation.constraints.Size;
 public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 
-	@NotNull
+	@NotNull(message = "O título é obrigatório!")
 	@Size(min = 5, max = 100)
 	private String titulo;
 	
-	@NotNull
+	@NotNull(message = "O texo é obrigatório")
 	@Size(min = 20, max = 1000)
 	private String texto;
 	
@@ -32,10 +32,10 @@ public class Postagem {
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getTitulo() {
