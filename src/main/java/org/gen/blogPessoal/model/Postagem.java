@@ -1,18 +1,17 @@
 package org.gen.blogPessoal.model;
 
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -23,20 +22,24 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotNull(message = "O título é obrigatório!")
-	@Size(min = 5, max = 100)
+	@NotBlank(message = "O Atributo título é obrigatório!") 
+	@Size(min = 5, max = 100, message = "O atributo título deve contar no mínimo 5 caracteres e no máximo 100!")
 	private String titulo;
 	
-	@NotNull(message = "O texo é obrigatório")
-	@Size(min = 20, max = 1000)
+	@NotBlank(message = "O Atributo texto é obrigatório!") 
+	@Size(min = 10, max = 1000, message = "O atributo título deve contar no mínimo 10 caracteres e no máximo 1000!")
 	private String texto;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date data = new java.sql.Date(System.currentTimeMillis());
+	@UpdateTimestamp
+	private LocalDateTime data;
 	
 	@JsonIgnoreProperties
 	@ManyToOne
 	private Tema tema;
+	
+	@JsonIgnoreProperties
+	@ManyToOne
+	private Usuario usuario;
 	
 	public long getId() {
 		return id;
@@ -56,10 +59,10 @@ public class Postagem {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	public Date getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 	public Tema getTema() {
@@ -67,6 +70,12 @@ public class Postagem {
 	}
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	
