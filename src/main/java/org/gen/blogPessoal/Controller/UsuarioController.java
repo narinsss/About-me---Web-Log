@@ -31,6 +31,7 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
 
 	@GetMapping("/all")
 	public ResponseEntity<List<Usuario>> getAll() {
