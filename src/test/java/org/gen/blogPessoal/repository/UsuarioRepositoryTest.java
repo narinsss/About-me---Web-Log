@@ -27,7 +27,8 @@ public class UsuarioRepositoryTest {
 	void start() {
 		usuarioRepository.deleteAll();
 		usuarioRepository.save(new Usuario(0L, "Julia Nun", "julia@gmail.com", "123456789", "https://oc-fanhub-assets.s3.amazonaws.com/img/avatar-jmg.png"));
-		usuarioRepository.save(new Usuario(0L, "Julio Nun", "julio@gmail.com", "123456789", "https://pbs.twimg.com/profile_images/2068072926/julio_400x400.jpg"));
+		usuarioRepository.save(new Usuario(0L, "Julio Nun", "julio@gmail.com", "1234560789", "https://pbs.twimg.com/profile_images/2068072926/julio_400x400.jpg"));
+		usuarioRepository.save(new Usuario(0L, "Julius Nun", "julius@gmail.com", "1234567009", "https://pbs.img.com/profile_images/2068072926/julio_400x400.jpg"));
 	
 	}
 	
@@ -39,12 +40,13 @@ public class UsuarioRepositoryTest {
 	}
 	
 	@Test
-	@DisplayName("Retorna 2 usuarios")
-	public void deveRetornarDoisUsuarios() {
+	@DisplayName("Retorna 3 usuarios")
+	public void deveRetornarTresUsuarios() {
 		List<Usuario> listaDeUsuarios = usuarioRepository.findAllByNomeContainingIgnoreCase("Nun");
-		assertEquals(2, listaDeUsuarios.size());
+		assertEquals(3, listaDeUsuarios.size());
 		assertTrue(listaDeUsuarios.get(0).getNome().equals("Julia Nun"));
 		assertTrue(listaDeUsuarios.get(1).getNome().equals("Julio Nun"));
+		assertTrue(listaDeUsuarios.get(2).getNome().equals("Julius Nun"));
 	}
 	
 	@AfterAll
