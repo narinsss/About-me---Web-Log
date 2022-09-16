@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 
 	@NotBlank(message = "O Atributo título é obrigatório!") 
 	@Size(min = 5, max = 100, message = "O atributo título deve contar no mínimo 5 caracteres e no máximo 100!")
@@ -33,18 +33,18 @@ public class Postagem {
 	@UpdateTimestamp
 	private LocalDateTime data;
 	
-	@JsonIgnoreProperties
 	@ManyToOne
+	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
-	@JsonIgnoreProperties
 	@ManyToOne
+	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getTitulo() {
