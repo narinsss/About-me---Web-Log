@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/postagem")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 	
 	@Autowired
@@ -32,7 +32,7 @@ public class PostagemController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Postagem> getId(@PathVariable long id){//o valor que vai entrar no id, é a variavel do caminho da uri ou url
+	public ResponseEntity<Postagem> getId(@PathVariable Long id){//o valor que vai entrar no id, é a variavel do caminho da uri ou url
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 		
 	}

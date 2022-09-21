@@ -29,8 +29,8 @@ public class SwaggerConfig {
 						.url("https://github.com/narinsss")
 						.email("maarib03@gmail.com")))
 				.externalDocs(new ExternalDocumentation()
-						.description("Github")
-						.url("https://github.com/narinsss/About-me---Web-Log"));
+						.description("My Space")
+						.url("https://my-space-blog.netlify.app/"));
 	}
 	
 	@Bean

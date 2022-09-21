@@ -26,9 +26,9 @@ public class UsuarioRepositoryTest {
 	@BeforeAll
 	void start() {
 		usuarioRepository.deleteAll();
-		usuarioRepository.save(new Usuario(0L, "Julia Nun", "julia@gmail.com", "123456789", "https://oc-fanhub-assets.s3.amazonaws.com/img/avatar-jmg.png"));
-		usuarioRepository.save(new Usuario(0L, "Julio Nun", "julio@gmail.com", "1234560789", "https://pbs.twimg.com/profile_images/2068072926/julio_400x400.jpg"));
-		usuarioRepository.save(new Usuario(0L, "Julius Nun", "julius@gmail.com", "1234567009", "https://pbs.img.com/profile_images/2068072926/julio_400x400.jpg"));
+		usuarioRepository.save(new Usuario(0L, "Julia Nun", "julia@gmail.com", "123456789", "https://oc-fanhub-assets.s3.amazonaws.com/img/avatar-jmg.png", null));
+		usuarioRepository.save(new Usuario(0L, "Julio Nun", "julio@gmail.com", "1234560789", "https://pbs.twimg.com/profile_images/2068072926/julio_400x400.jpg", null));
+		usuarioRepository.save(new Usuario(0L, "Julius Nun", "julius@gmail.com", "1234567009", "https://pbs.img.com/profile_images/2068072926/julio_400x400.jpg", null));
 	
 	}
 	

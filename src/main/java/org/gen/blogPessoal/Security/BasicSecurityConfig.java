@@ -38,6 +38,7 @@ public class BasicSecurityConfig {
 				.antMatchers("/usuarios/logar").permitAll()
 				.antMatchers("/usuarios/cadastrar").permitAll()
 				.antMatchers(HttpMethod.OPTIONS).permitAll()
+				.antMatchers(HttpMethod.GET ,"/usuarios/{id}").permitAll()
 				.anyRequest().authenticated())
 		.httpBasic();
 		return http.build();
