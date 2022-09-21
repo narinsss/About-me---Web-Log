@@ -8,18 +8,9 @@ public class UsuarioLogin {
 	private String foto;
 	private String tipo;
 	private String token;
-	private String tipo;
+
 	
-<<<<<<< HEAD
-=======
-	
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
->>>>>>> 7c93ecb36cb8e4e8d4fd8e82c2786452bd7285dd
+
 	public Long getId() {
 		return id;
 	}

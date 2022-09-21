@@ -41,7 +41,6 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
-<<<<<<< HEAD
 	private String foto;
 
 	public String getFoto() {
@@ -56,11 +55,6 @@ public class Postagem {
 		return id;
 	}
 
-=======
-	public Long getId() {
-		return id;
-	}
->>>>>>> 7c93ecb36cb8e4e8d4fd8e82c2786452bd7285dd
 	public void setId(Long id) {
 		this.id = id;
 	}
