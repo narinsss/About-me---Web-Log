@@ -22,8 +22,8 @@ public class SwaggerConfig {
 						.description("Blog pessoal - About Me")
 						.version("v0.0.1")
 				.license(new License()
-						.name("My Space")
-						.url("https://my-space-blog.netlify.app/"))
+						.name("Generation Brasil")
+						.url("https://brazil.generation.org/"))
 				.contact(new Contact()
 						.name("Marina Rosa")
 						.url("https://github.com/narinsss")
@@ -52,4 +52,5 @@ public class SwaggerConfig {
 	private ApiResponse createApiResponse(String message) {
 		return new ApiResponse().description(message);
 	}
+	
 }
